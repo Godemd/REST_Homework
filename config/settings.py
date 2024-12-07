@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "users",
     "courses",
+    "subscriptions",
     "django_filters",
     "django.contrib.admin",
     "django.contrib.auth",
