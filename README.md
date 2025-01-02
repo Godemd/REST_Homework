@@ -128,6 +128,7 @@ REST_HOMEWORK/
   ```
 
 ---
+1. Убедитесь, что у вас установлены Docker и Docker Compose.
 2. Соберите и запустите контейнеры:
     ```sh
     docker-compose up --build
