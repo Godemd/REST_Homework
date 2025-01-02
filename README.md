@@ -155,15 +155,3 @@ docker-compose run web /root/.local/bin/poetry run celery -A REST_HOMEWORK worke
 ```
 
 ---
-## **Вклад в проект**
-
-1. Форкните репозиторий.
-2. Создайте ветку:
-   ```bash
-   git checkout -b feature/ваша-фича
-   ```
-3. Закоммитьте изменения:
-   ```bash
-   git commit -m "Добавлена новая фича"
-   ```
-4. Откройте Pull Request.
