@@ -1,4 +1,5 @@
 # Используем официальный образ Python
+# Используем официальный образ Python
 FROM python:3.9-slim
 
 # Устанавливаем зависимости
@@ -24,4 +25,4 @@ RUN /root/.local/bin/poetry run python manage.py migrate
 RUN /root/.local/bin/poetry run python.manage.py collectstatic --noinput
 
 # Указываем команду для запуска сервера
-CMD ["/root/.local/bin/poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "Mahiru_Homework_REST_API.wsgi:application"]
+CMD ["/root/.local/bin/poetry", "run", "gunicorn", "--bind", "0.0.0.0:8000", "REST_HOMEWORK.wsgi:application"]
