@@ -75,7 +75,7 @@ python manage.py loaddata payments.json
 ## **Структура проекта**
 
 ```plaintext
-Mahiru_Homework_REST_API/
+REST_HOMEWORK/
 ├── courses/                # Приложение для курсов и уроков
 │   ├── templates/          # HTML-шаблоны
 │   ├── models.py           # Модели курсов и уроков
@@ -128,7 +128,32 @@ Mahiru_Homework_REST_API/
   ```
 
 ---
+2. Соберите и запустите контейнеры:
+    ```sh
+    docker-compose up --build
+    ```
+3. Примените миграции и соберите статические файлы:
+    ```sh
+    docker-compose run web /root/.local/bin/poetry run python manage.py migrate
+    docker-compose run web /root/.local/bin/poetry run python manage.py collectstatic --noinput
+    ```
+4. Откройте браузер и перейдите по адресу `http://localhost:8000` для доступа к приложению.
 
+## Использование Celery
+
+Celery автоматически запускается вместе с Docker Compose. Для проверки статуса задач Celery используйте следующие команды:
+
+```sh
+docker-compose run web /root/.local/bin/poetry run celery -A REST_HOMEWORK status
+```
+
+Для запуска задач Celery используйте:
+
+```sh
+docker-compose run web /root/.local/bin/poetry run celery -A REST_HOMEWORK worker --loglevel=info
+```
+
+---
 ## **Вклад в проект**
 
 1. Форкните репозиторий.
